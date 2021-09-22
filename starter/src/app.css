@@ -41,3 +41,45 @@
   font-weight: 700;
   font-size: 13px;
 }
+
+.wrapper-cards {
+  margin-top: 32px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
+  grid-gap: 16px;
+}
+
+.card {
+  width: 100%;
+  max-width: 300px;
+  background-color: #fff;
+  margin-bottom: 16px;
+}
+
+.card-body {
+  padding: 8px 16px;
+}
+
+.card-body h2 {
+  color: #797979;
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.card-body p {
+  margin-bottom: 16px;
+  font-weight: 400;
+  font-size: 22px;
+}
+
+.card-body a {
+  display: block;
+  padding: 8px;
+  font-size: 18px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  background-color: #706fd3;
+}
