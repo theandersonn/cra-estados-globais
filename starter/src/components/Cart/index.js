@@ -2,7 +2,7 @@ import CartItem from "../CartItem";
 
 const Cart = () => {
   return (
-    <sidebar className="cart">
+    <aside className="cart">
       <header className="cart-header">
         <h2>Seu carrinho</h2>
       </header>
@@ -20,7 +20,7 @@ const Cart = () => {
       <footer className="cart-total">
         <h2>Total: R$ 43.629,70</h2>
       </footer>
-    </sidebar>
+    </aside>
   );
 }
 

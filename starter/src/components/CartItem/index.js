@@ -9,7 +9,7 @@ const Cart = () => {
       <div className="cart-item-info">
         <h3 className="cart-item-name">Macbook Air 13" Apple M1</h3>
         <span className="cart-item-price">R$ 17.451,88</span>
-        <button class="cart-item-remove">remove</button>
+        <button className="cart-item-remove">remove</button>
       </div>
 
       <div className="wrapper-quantity">
