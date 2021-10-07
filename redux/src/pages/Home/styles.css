@@ -1,0 +1,11 @@
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.wrapper-home {
+  display: flex;
+  justify-content: space-between;  
+  margin-top: 32px;
+}
