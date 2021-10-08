@@ -3,11 +3,11 @@ import "./styles.css";
 const ProductItem = () => {
   return (
     <article className="card">
-      <img src="https://images.unsplash.com/photo-1585643248637-7d04f9461dd8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1341&q=80" alt="Macbook Air 13 Apple M1" /> 
+      <img src="https://images-americanas.b2w.io/produtos/01/00/img/2264884/2/2264884233_2SZ.jpg" alt="Funko Pop TV The Office Jim Halpert" /> 
 
       <div className="card-body">
-        <h2>Macbook Air 13" Apple M1</h2>
-        <p>R$ 8.725,94</p>
+        <h2>Funko Pop TV The Office Jim Halpert</h2>
+        <p>R$ 250,89</p>
         <button>Comprar</button> 
       </div> 
     </article>                      

@@ -4,11 +4,11 @@ import "./styles.css";
 const Cart = () => {
   return (
     <article className="cart-item">
-      <img className="cart-item-img" src="https://images.unsplash.com/photo-1585643248637-7d04f9461dd8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1341&q=80" alt="Macbook Air 13 Apple M1" />
+      <img className="cart-item-img" src="https://images-americanas.b2w.io/produtos/01/00/img/2264884/2/2264884233_2SZ.jpg" alt="Funko Pop TV The Office Jim Halpert" />
 
       <div className="cart-item-info">
-        <h3 className="cart-item-name">Macbook Air 13" Apple M1</h3>
-        <span className="cart-item-price">R$ 17.451,88</span>
+        <h3 className="cart-item-name">Funko Pop TV The Office Jim Halpert</h3>
+        <span className="cart-item-price">R$ 250,89</span>
         <button className="cart-item-remove">remove</button>
       </div>
 
