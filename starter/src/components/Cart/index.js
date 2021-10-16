@@ -1,4 +1,5 @@
 import CartItem from "../CartItem";
+import "./styles.css";
 
 const Cart = () => {
   return (
