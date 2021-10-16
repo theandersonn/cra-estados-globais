@@ -1,13 +1,13 @@
 import "./styles.css";
 
-const ProductItem = () => {
+const ProductItem = ({image, title, price}) => {
   return (
     <article className="card">
-      <img src="https://images-americanas.b2w.io/produtos/01/00/img/2264884/2/2264884233_2SZ.jpg" alt="Funko Pop TV The Office Jim Halpert" /> 
+      <img src={image} alt={title} /> 
 
       <div className="card-body">
-        <h2>Funko Pop TV The Office Jim Halpert</h2>
-        <p>R$ 250,89</p>
+        <h2>{title}</h2>
+        <p>R$ {price}</p>
         <button>Comprar</button> 
       </div> 
     </article>                      
