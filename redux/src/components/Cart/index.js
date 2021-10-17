@@ -1,7 +1,8 @@
 import CartItem from "../CartItem";
 import "./styles.css";
 
-const Cart = () => {
+const Cart = ({cart}) => {
+  console.log('cart', cart);
   return (
     <aside className="cart">
       <header className="cart-header">

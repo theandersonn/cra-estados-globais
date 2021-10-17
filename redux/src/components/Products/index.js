@@ -1,12 +1,11 @@
 import ProductItem from "../ProductItem";
 import "./styles.css";
 
-const Products = ({products = []}) => (
+const Products = ({products = [], addCart}) => (
   <section className="wrapper-cards">
-    {products.map(item => {
-      const {_id, image, title, price} = item;
+    {products.map(productItem => {
       return (
-        <ProductItem key={_id} image={image} title={title} price={price} />
+        <ProductItem key={productItem._id} productItem={productItem} addCart={addCart} />
       )
     })}
   </section>

@@ -1,6 +1,7 @@
 import "./styles.css";
 
-const ProductItem = ({image, title, price}) => {
+const ProductItem = ({productItem, addCart}) => {
+  const {image, title, price} = productItem;
   return (
     <article className="card">
       <img src={image} alt={title} /> 
@@ -8,7 +9,7 @@ const ProductItem = ({image, title, price}) => {
       <div className="card-body">
         <h2>{title}</h2>
         <p>R$ {price}</p>
-        <button>Comprar</button> 
+        <button onClick={() => addCart(productItem)}>Comprar</button> 
       </div> 
     </article>                      
   );
