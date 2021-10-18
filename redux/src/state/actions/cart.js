@@ -1,8 +1,8 @@
-import { ADD_CART } from "../types";
+import { ADD_ITEM } from "../types";
 
 export const addCart = (product) => {
   return {
-    type: ADD_CART,
+    type: ADD_ITEM,
     payload: product
   }
 }

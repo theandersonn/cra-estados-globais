@@ -7,7 +7,7 @@ import Home from '../pages/Home';
 
 const mapStateToProps = (state) => ({
   products: state.products.data,
-  cart: state.cart.data
+  cart: state.cart
 });
 
 const mapDispatchToProps = (dispatch) => ({
