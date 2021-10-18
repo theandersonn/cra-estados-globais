@@ -1,8 +1,8 @@
-import { ADD_CART, REMOVE_ITEM } from '../types';
+import { ADD_ITEM, REMOVE_ITEM } from '../types';
 
 const cart = (state = {}, action) => {
   switch (action.type) {
-    case ADD_CART:
+    case ADD_ITEM:
       return {
         // copiar todos os itens do estado para dentro desse objejto
         ...state,
@@ -12,6 +12,18 @@ const cart = (state = {}, action) => {
           amount: state[action.payload._id] ? state[action.payload._id].amount + 1 : 1
         }
       }
+
+    case REMOVE_ITEM:
+      return Object.keys(state).reduce(function(acc, productId) {
+          return {
+            ...acc,
+            ...(
+              productId === action.payload
+                ? {}
+                : {[productId]: state[productId]}
+              )
+          }
+        }, {})            
     
     default:
       return state
