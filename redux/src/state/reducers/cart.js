@@ -1,4 +1,4 @@
-import { ADD_ITEM, REMOVE_ITEM } from '../types';
+import { ADD_ITEM, DECREASE, INCREASE, REMOVE_ITEM } from '../types';
 
 const cart = (state = {}, action) => {
   switch (action.type) {
@@ -23,7 +23,36 @@ const cart = (state = {}, action) => {
                 : {[productId]: state[productId]}
               )
           }
-        }, {})            
+        }, {});
+    
+    case INCREASE:
+      return {
+        ...state,
+        [action.payload]: {
+          ...state[action.payload],
+          amount: state[action.payload].amount + 1
+        }
+      };
+    
+    case DECREASE:
+      return (state[action.payload].amount > 1)
+      ? {
+        ...state,
+        [action.payload]: {
+          ...state[action.payload],
+          amount: state[action.payload].amount - 1
+        }
+      }
+      : Object.keys(state).reduce(function(acc, productId) {
+        return {
+          ...acc,
+          ...(
+            productId === action.payload
+              ? {}
+              : {[productId]: state[productId]}
+            )
+        }
+      }, {});      
     
     default:
       return state

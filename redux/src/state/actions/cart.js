@@ -1,4 +1,4 @@
-import { ADD_ITEM, REMOVE_ITEM } from "../types";
+import { ADD_ITEM, DECREASE, INCREASE, REMOVE_ITEM } from "../types";
 
 export const addItem = (product) => {
   return {
@@ -10,6 +10,20 @@ export const addItem = (product) => {
 export const removeItem = (productId) => {
   return {
     type: REMOVE_ITEM,
+    payload: productId
+  }
+}
+
+export const increase = (productId) => {
+  return {
+    type: INCREASE,
+    payload: productId
+  }
+}
+
+export const decrease = (productId) => {
+  return {
+    type: DECREASE,
     payload: productId
   }
 }

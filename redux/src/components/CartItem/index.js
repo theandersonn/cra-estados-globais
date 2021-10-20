@@ -1,7 +1,7 @@
 import { MdKeyboardArrowUp, MdKeyboardArrowDown } from "react-icons/md";
 import "./styles.css";
 
-const Cart = ({id, title, image, price, amount, removeItem}) => (
+const Cart = ({id, title, image, price, amount, removeItem, increase, decrease}) => (
   <article className="cart-item">
     <img className="cart-item-img" src={image} alt={title} />
 
@@ -12,9 +12,9 @@ const Cart = ({id, title, image, price, amount, removeItem}) => (
     </div>
 
     <div className="wrapper-quantity">
-      <MdKeyboardArrowUp className="cart-item-increase" />
+      <MdKeyboardArrowUp className="cart-item-increase" onClick={() => increase(id)} />
       <span className="cart-item-quantity">{amount}</span>
-      <MdKeyboardArrowDown className="cart-item-decrease" />
+      <MdKeyboardArrowDown className="cart-item-decrease" onClick={() => decrease(id)} />
     </div>
   </article>
 );

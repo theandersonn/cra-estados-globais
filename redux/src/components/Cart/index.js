@@ -1,7 +1,7 @@
 import CartItem from "../CartItem";
 import "./styles.css";
 
-const Cart = ({cart, removeItem}) => (
+const Cart = ({cart, removeItem, increase, decrease}) => (
   <aside className="cart">
     <header className="cart-header">
       <h2>Seu carrinho</h2>
@@ -12,7 +12,7 @@ const Cart = ({cart, removeItem}) => (
     </div>
 
     <div className="cart-items">
-      {Object.keys(cart).map((id) => <CartItem key={id} id={id} title={cart[id].title} image={cart[id].image} price={cart[id].price} amount={cart[id].amount} removeItem={removeItem} />)}
+      {Object.keys(cart).map((id) => <CartItem key={id} id={id} title={cart[id].title} image={cart[id].image} price={cart[id].price} amount={cart[id].amount} removeItem={removeItem} decrease={decrease} increase={increase} />)}
     </div>
 
     <footer className="cart-total">
