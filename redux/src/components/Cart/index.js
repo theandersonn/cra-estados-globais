@@ -1,6 +1,14 @@
 import CartItem from "../CartItem";
 import "./styles.css";
 
+const cartTotal = (cart) => {
+  return Object.keys(cart).reduce(function (acc, produtoId) {
+    return (
+      acc + parseFloat(cart[produtoId].price) * parseInt(cart[produtoId].amount)
+    );
+  }, 0);
+}
+
 const Cart = ({cart, removeItem, increase, decrease}) => (
   <aside className="cart">
     <header className="cart-header">
@@ -16,7 +24,7 @@ const Cart = ({cart, removeItem, increase, decrease}) => (
     </div>
 
     <footer className="cart-total">
-      <h2>Total: R$ 43.629,70</h2>
+      <h2>Total: R$ {cartTotal(cart).toFixed(2)}</h2>
     </footer>
   </aside>
 );
