@@ -11,7 +11,7 @@ const Home = ({getProducts, products, addItem, cart, removeItem, increase, decre
 
   return (
     <>
-      <Header />
+      <Header cart={cart} />
       <div className="container">
         <div className="wrapper-home">
           <Products products={products} addItem={addItem} />
