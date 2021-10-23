@@ -1,11 +1,10 @@
 .cart-item {
   display: flex;
   justify-content: space-between;
-  padding: 0 4px;
 }
 
 .cart-item + .cart-item {
-  margin-top: 24px;
+  margin-top: 12px;
 }
 
 .cart-item-img {
