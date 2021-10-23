@@ -1,21 +1,16 @@
-import { useEffect } from 'react';
-import Header from '../../components/Header';
-import Cart from '../../components/Cart';
-import Products from "../../components/Products";
+import Header from '../../containers/HeaderContainer';
+import Cart from '../../containers/CartContainer';
+import Products from '../../containers/ProductsContainer';
 import "./styles.css";
 
-const Home = ({getProducts, products, addItem, cart, removeItem, increase, decrease}) => {
-  useEffect(() => {
-    getProducts();
-  }, [getProducts]);
-
+const Home = () => {
   return (
     <>
-      <Header cart={cart} />
+      <Header />
       <div className="container">
         <div className="wrapper-home">
-          <Products products={products} addItem={addItem} />
-          <Cart cart={cart} removeItem={removeItem} increase={increase} decrease={decrease} />
+          <Products />
+          <Cart />
         </div>
       </div>
     </>

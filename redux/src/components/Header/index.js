@@ -1,7 +1,7 @@
 import { MdShoppingCart } from "react-icons/md";
 import "./styles.css";
 
-const Header = ({ cart }) => {
+const Header = ({ cart = [] }) => {
   return (
     <header className="header">
       <h1>shopping cart</h1>
