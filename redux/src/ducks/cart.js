@@ -1,8 +1,47 @@
-import { ADD_ITEM, DECREASE, INCREASE, REMOVE_ITEM } from '../types';
+// types
+// -----
+export const Types = {
+  ADD_ITEM: 'ADD_ITEM',
+  REMOVE_ITEM: 'REMOVE_ITEM',
+  INCREASE: 'INCREASE',
+  DECREASE: 'DECREASE'
+};
 
-const cart = (state = {}, action) => {
+// actions creators
+// ----------------
+export const addItem = (product) => {
+  return {
+    type: Types.ADD_ITEM,
+    payload: product
+  }
+}
+
+export const removeItem = (productId) => {
+  return {
+    type: Types.REMOVE_ITEM,
+    payload: productId
+  }
+}
+
+export const increase = (productId) => {
+  return {
+    type: Types.INCREASE,
+    payload: productId
+  }
+}
+
+export const decrease = (productId) => {
+  return {
+    type: Types.DECREASE,
+    payload: productId
+  }
+}
+
+// reducers
+// --------
+export const cart = (state = {}, action) => {
   switch (action.type) {
-    case ADD_ITEM:
+    case Types.ADD_ITEM:
       return {
         ...state,
         [action.payload._id]: {
@@ -11,7 +50,7 @@ const cart = (state = {}, action) => {
         }
       }
 
-    case REMOVE_ITEM:
+    case Types.REMOVE_ITEM:
       return Object.keys(state).reduce(function(acc, productId) {
           return {
             ...acc,
@@ -23,7 +62,7 @@ const cart = (state = {}, action) => {
           }
         }, {});
     
-    case INCREASE:
+    case Types.INCREASE:
       return {
         ...state,
         [action.payload]: {
@@ -32,7 +71,7 @@ const cart = (state = {}, action) => {
         }
       };
     
-    case DECREASE:
+    case Types.DECREASE:
       return (state[action.payload].amount > 1)
       ? {
         ...state,
@@ -56,5 +95,3 @@ const cart = (state = {}, action) => {
       return state
   }
 }
-
-export default cart;

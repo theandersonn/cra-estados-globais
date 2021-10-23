@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { removeItem, increase, decrease } from '../state/actions/cart';
+import { removeItem, increase, decrease } from '../ducks/cart';
 import Cart from '../components/Cart';
 
 const mapStateToProps = (state) => ({
