@@ -35,4 +35,37 @@ describe('cart reducer', () => {
 
     expect(cart(initialState, action)).toEqual(after);
   });
+
+  it('should increase amount product', () => {
+    const initialState = { 2: { ...product, amount: 1 } };
+    const action = {
+      type: Types.INCREASE,
+      payload: '2',
+    };
+    const after = { 2: { ...product, amount: 2 } };
+
+    expect(cart(initialState, action)).toEqual(after);
+  });
+
+  it('should decrease amount product', () => {
+    const initialState = { 2: { ...product, amount: 2 } };
+    const action = {
+      type: Types.DECREASE,
+      payload: '2',
+    };
+    const after = { 2: { ...product, amount: 1 } };
+
+    expect(cart(initialState, action)).toEqual(after);
+  });
+  
+  it('should remove the product if the amount is equal to 1', () => {
+    const initialState = { 2: { ...product, amount: 1 } };
+    const action = {
+      type: Types.DECREASE,
+      payload: '2',
+    };
+    const after = {};
+
+    expect(cart(initialState, action)).toEqual(after);
+  })
 });
