@@ -7,7 +7,7 @@ const cartTotal = (cart) => {
   }, 0);
 };
 
-const Cart = ({ cart = [], removeItem, increase, decrease }) => (
+const Cart = ({ cart, removeItem, increase, decrease }) => (
   <aside className="cart">
     <header className="cart-header">
       <h2>Seu carrinho</h2>

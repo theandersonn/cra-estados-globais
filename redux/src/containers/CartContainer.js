@@ -1,9 +1,10 @@
 import { connect } from 'react-redux';
+import { pathOr } from 'ramda';
 import { removeItem, increase, decrease } from '../ducks/cart';
 import Cart from '../components/Cart';
 
 const mapStateToProps = (state) => ({
-  cart: state.cart
+  cart: pathOr({}, ['cart'], state)
 });
 
 const mapDispatchToProps = (dispatch) => ({

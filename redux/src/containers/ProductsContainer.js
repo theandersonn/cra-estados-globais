@@ -1,10 +1,11 @@
 import { connect } from 'react-redux';
+import { pathOr } from 'ramda';
 import { getProducts } from '../ducks/products';
 import { addItem } from '../ducks/cart';
 import Products from '../components/Products';
 
 const mapStateToProps = (state) => ({
-  products: state.products.data
+  products: pathOr([], ['products', 'data'], state),
 });
 
 const mapDispatchToProps = (dispatch) => ({
