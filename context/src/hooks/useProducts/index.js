@@ -1,4 +1,4 @@
-import { createContext, useEffect, useReducer } from 'react';
+import { createContext, useContext, useReducer, useEffect } from 'react';
 import axios from 'axios';
 
 const initialState = {
@@ -20,9 +20,9 @@ const reducer = (state = {}, action) => {
   }
 };
 
-const ProductListContext = createContext();
+const ProductsContext = createContext();
 
-const ProductListProvider = ({ children }) => {  
+const ProductsProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const getProducts = async (url) => {
@@ -38,13 +38,15 @@ const ProductListProvider = ({ children }) => {
 
   useEffect(() => {
     getProducts('https://mocki.io/v1/971e25e2-fff0-4121-8409-d9175018f79b');
-  }, []);
+  }, []);  
 
   return (
-    <ProductListContext.Provider value={{ ...state }}>
-      { children }
-    </ProductListContext.Provider>
-  ) 
+    <ProductsContext.Provider value={{ ...state }}>
+      {children}
+    </ProductsContext.Provider>
+  );
 };
 
-export { ProductListContext, ProductListProvider };
+const useProducts = () => useContext(ProductsContext);
+
+export { ProductsProvider, useProducts };

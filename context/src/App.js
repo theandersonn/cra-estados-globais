@@ -1,15 +1,15 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { ProductListProvider } from './context/ProductListContext';
+import { ProductsProvider } from './hooks/useProducts';
 import Home from './pages/Home';
 
 const App = () => {
   return (
     <Router>
-      <ProductListProvider>
+      <ProductsProvider>
         <Routes>
           <Route path="/" element={<Home/>} />
         </Routes>
-      </ProductListProvider>
+      </ProductsProvider>
     </Router>
   );
 }
