@@ -1,11 +1,10 @@
 import { useContext } from 'react';
-import { Context } from '../../context/ProductsContext';
+import { ProductListContext } from '../../context/ProductListContext';
 import ProductItem from "../ProductItem";
 import "./styles.css";
 
 const Products = () => {
-  const { loading, error, products } = useContext(Context);
-  console.log(loading, error, products);
+  const { loading, error, products } = useContext(ProductListContext);
   return (
     <section className="wrapper-cards">
       <ProductItem />                    
